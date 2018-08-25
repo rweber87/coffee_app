@@ -1,0 +1,2 @@
+module CoffeeStatusesHelper
+end

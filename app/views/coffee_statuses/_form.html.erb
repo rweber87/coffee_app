@@ -1,0 +1,27 @@
+<%= form_with(model: coffee_status, local: true) do |form| %>
+  <% if coffee_status.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coffee_status.errors.count, "error") %> prohibited this coffee_status from being saved:</h2>
+
+      <ul>
+      <% coffee_status.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :available %>
+    <%= form.check_box :available, id: :coffee_status_available %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_updated_last %>
+    <%= form.text_field :user_updated_last, id: :coffee_status_user_updated_last %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

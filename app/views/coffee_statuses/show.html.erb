@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @coffee_status.available %>
+</p>
+
+<p>
+  <strong>User updated last:</strong>
+  <%= @coffee_status.user_updated_last %>
+</p>
+
+<%= link_to 'Edit', edit_coffee_status_path(@coffee_status) %> |
+<%= link_to 'Back', coffee_statuses_path %>

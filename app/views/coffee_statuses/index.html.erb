@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coffee Statuses</h1>
+
+<table>
+  <tbody>
+    <% @coffee_statuses.each do |coffee_status| %>
+      <tr>
+      	<% if coffee_status.available === true %>
+        	<td><%= image_tag("download.png", height: '32', width: '32') %></td>
+        	<td><%= coffee_status.available %></td>
+        	<td><%= coffee_status.last_updated %></td>
+        <% elsif coffee_status.available === false %>
+        	<td><%= image_tag("angry.png", height: '32', width: '32') %></td>
+        	<td><%= coffee_status.available %></td>
+        	<td><%= coffee_status.last_updated %></td>
+        <% end %>
+        <td><%= coffee_status.user_updated_last %></td>
+        <td><%= link_to 'Show', coffee_status %></td>
+        <td><%= link_to 'Edit', edit_coffee_status_path(coffee_status) %></td>
+        <td><%= link_to 'Destroy', coffee_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coffee Status', new_coffee_status_path %>
